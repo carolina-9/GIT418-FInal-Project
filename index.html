@@ -1,77 +1,349 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giggle</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>gigly</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="imgs/b-giglelogo.png" type="image/x-icon">
+
+    <!-- jquery ui-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- swiper library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 </head>
 <body>
 
     <!-- landing page -->
     <main>
-    <section class="landing flex justify-between items-center w-full">
-        <img src ="#" alt="logo">
-        <nav >
-            <ul>
-                <li><a href="index.html">My Events</a></li>
-            </ul>
-        </nav>
+    <section class="landing bg-teal-950 w-screen h-screen">
 
-        <h1>Giggle</h1>
-        <h2>Where every event finds you.</h2>
-        <p>An innovative platform for discovering and tracking live events, tailored to your interests and lifestyle.</p>
-        <input type="text" placeholder="Search for events">
+        <!-- logo and nav -->
+        <div class="flex justify-between items-center inline">
+            <a href="#" alt="logo"><img src ="imgs/w-giglelogo.png" alt="logo" class="relative left-10 w-10 h-10 relative top-6"></a>
+            <nav class="relative right-20 top-5">
+                <ul>
+                    <li class="text-light"><a href="dashboard.html">My Events</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="flex flex-col justify-center items-center h-screen">
+            <h1 class="block mb-4 text-6xl text-violet-50">gigly</h1>
+            <h2 class="block mb-10 text-4xl text-violet-50">Where every event finds you.</h2>
+            <!-- <p class="block mb-4">An innovative platform for discovering and tracking live events, tailored to your interests and lifestyle.</p> -->
+
+                <!-- search bar with button -->
+            <form class="flex border-2 border-emerald-50 rounded-sm mb-4 w-80 h-10">
+                <input id="search" class="block w-full text-center rounded-sm" type="text" placeholder="Search artist, venue, or genre ">
+
+                <!-- seach icon button -->
+
+                <!-- connect button and input in js ~ later -->
+                <!-- fix border radius: rounded-md border-2 ??? -->
+
+        
+                <button class="bg-blue text-white px-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#162802" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+                </button>
+            </form>
+           
+            
+        </div>
 
         <!-- imgs & shapes -->
 
-        <div class="shapes"></div>
-        <div class="landing-pg-imgs"></div>
+        <!-- <div class="shapes"></div>
+        <div class="landing-pg-imgs"></div> -->
+
     </section>
 
     <!-- filtered search page -->
-    <!-- <section class="for-you">
-        <h3>Gigs just for you.</h3>
+    <section class="for-you w-screen h-screen">
+        <h3 class="text-3xl flex justify-center mt-20 mb-20">Gigs just for you.</h3>
 
-            <div class="Best Results">
-                <h4>Best Results</h4>
+        <!-- best results slider-->
+            <div class="yourlist">
+                <h4 class="text-2xl ml-20 mb-10 ">Your List</h4>
+
+                <!-- card design -->
+
+                <!-- <div class="carousel-container flex">
+                    <div class="multiple-items">
+                        <div class="card-content border-2 w-80">
+                            <img src="imgs/example-img.jpg" alt="image" class="w-80 h-54 rounded-lg">
+                            <div class="card-text m-5">
+                                <h5>Test Header</h5>
+                                <p class="mb-5">test Paragagh</p>
+                                <button class="btn">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            <!-- swiper  -->
+
+            <div class="swiper mb-10 w-screen">
+          
+                <div class="swiper-wrapper">
+                
+                    <!-- <div class="swiper-slide flex justify-center space-x-4">
+                        <div class="card-content border-2 w-80">
+                            <img src="imgs/example-img.jpg" alt="image" class="w-80 h-54 rounded-lg">
+                            <div class="card-text m-5">
+                                <h5>Test Header</h5>
+                                <p class="mb-5">test Paragagh</p>
+                                <button class="btn">Read More</button>
+                            </div>
+                    </div> -->
+                
+            
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    
+                
+                </div>
+
+               
             </div>
-            <div class="Similar">
-                <h4>Similar</h4>
-            </div> -->
-
+                
+            
             <!-- maybe -->
-            <!-- <div class="Trending">
-                <h4>Trending</h4>
-            </div>   
-            <div class="Near you">
-                <h4>Near you</h4>
-            </div>
-    </section> -->
+            <div class="trending">
+                <h4 class="text-2xl ml-20 mb-10">Trending</h4>
+                <div class="swiper mb-10">
+          
+                    <div class="swiper-wrapper">
+                      
+                      <div class="swiper-slide flex justify-center space-x-4">
+                          
+                          <div class="card-content border-2 w-80 h-54">
+                              <img src="imgs/taylor.jpeg" alt="image" class="w-80 h-56 object-cover rounded-lg">
+                              <div class="card-text m-5">
+                                  <h5>Taylor Swift</h5>
+                                  <p class="mb-5">State Farm Stadium</p>
+                              </div>
+                          </div>
+      
+                          <div class="card-content border-2 w-80 h-54">
+                              <img src="imgs/badbunny.jpeg" alt="image" class="w-80 h-56 object-cover rounded-lg">
+                              <div class="card-text m-5">
+                                  <h5>Bad Bunny</h5>
+                                  <p class="mb-5"> Rose Bowl</p>
+                              </div>
+                          </div>
+      
+                          <div class="card-content border-2 w-80 h-54">
+                              <img src="imgs/weekend.jpeg" alt="image" class="w-80 h-56 object-cover rounded-lg">
+                              <div class="card-text m-5">
+                                  <h5>The Weekend</h5>
+                                  <p class="mb-5">Footprint Center</p>
+
+                              </div>
+                          </div>
+      
+                          <div class="card-content border-2 w-80 h-54">
+                              <img src="imgs/adele.png" alt="image" class="w-80 h-56 object-cover rounded-lg">
+                              <div class="card-text m-5">
+                                  <h5>Adele</h5>
+                                  <p class="mb-5">Ceasar's Palace</p>
+                              </div>
+                          </div>
+      
+                      </div>
+                      <div class="swiper-slide flex justify-center space-x-4">
+                        <div class="card-content border-2 w-80 h-54">
+                          <img src="imgs/am.jpeg" alt="image" class="w-80 h-56 object-cover rounded-lg">
+                          <div class="card-text m-5">
+                              <h5>Arctic Monkeys</h5>
+                              <p class="mb-5">The Shrine</p>
+
+                          </div>
+                      </div>
+      
+                      <div class="card-content border-2 w-80 h-54">
+                        <img src="imgs/1975.jpeg" alt="image" class="w-80 h-56 object-cover rounded-lg">
+                        <div class="card-text m-5">
+                            <h5>The 1975</h5>
+                            <p class="mb-5">The Forum</p>
+                        </div>
+                    </div>
+      
+                      <div class="card-content border-2 w-80 h-54">
+                          <img src="imgs/hozier.jpeg" alt="image" class="w-80 h-56 object-cover rounded-lg">
+                          <div class="card-text m-5">
+                              <h5>Hozier</h5>
+                              <p class="mb-5">Red Rocks</p>
+                              <button class="btn">Read More</button>
+                          </div>
+                      </div>
+      
+                      <div class="card-content border-2 w-80 h-54">
+                          <img src="imgs/beyonce.jpeg" alt="image"  class="w-80 h-56 object-cover rounded-lg">
+                          <div class="card-text m-5">
+                              <h5>Beyonce</h5>
+                              <p class="mb-5">Lumen Field Stadium</p>
+                          </div>
+                      </div>
+      
+                      
+                  </div>
+          
+                    </div>
+                   
+                  
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                
+                  
+                  </div>
+      
+                     
+                  </div>
+            </div>  
+             
+            
+            <!-- seatgeek geolocation paramter - figure  -->
+            <!-- <div class="nearyou">
+                <h4 class="text-2xl ml-20 mb-10">Near you</h4>
+
+                <div class="swiper">
+          
+                    <div class="swiper-wrapper">
+                      
+                      <div class="swiper-slide flex justify-center space-x-4">
+                          <div class="card-content border-2 w-80">
+                              <img src="imgs/example-img.jpg" alt="image" class="w-80 h-54 rounded-lg">
+                              <div class="card-text m-5">
+                                  <h5>Test Header</h5>
+                                  <p class="mb-5">test Paragagh</p>
+                                  <button class="btn">Read More</button>
+                              </div>
+                          </div>
+      
+      
+                          <div class="card-content border-2 w-80">
+                              <img src="imgs/example-img.jpg" alt="image" class="w-80 h-54 rounded-lg">
+                              <div class="card-text m-5">
+                                  <h5>Test Header</h5>
+                                  <p class="mb-5">test Paragagh</p>
+                                  <button class="btn">Read More</button>
+                              </div>
+                          </div>
+      
+                          <div class="card-content border-2 w-80">
+                              <img src="imgs/example-img.jpg" alt="image" class="w-80 h-54 rounded-lg">
+                              <div class="card-text m-5">
+                                  <h5>Test Header</h5>
+                                  <p class="mb-5">test Paragagh</p>
+                                  <button class="btn">Read More</button>
+                              </div>
+                          </div>
+      
+                          <div class="card-content border-2 w-80">
+                              <img src="imgs/example-img.jpg" alt="image" class="w-80 h-54 rounded-lg">
+                              <div class="card-text m-5">
+                                  <h5>Test Header</h5>
+                                  <p class="mb-5">test Paragagh</p>
+                                  <button class="btn">Read More</button>
+                              </div>
+                          </div>
+      
+                      </div>
+                      <div class="swiper-slide flex justify-center space-x-4"><div class="card-content border-2 w-80">
+                          <img src="imgs/example-img.jpg" alt="image" class="w-80 h-54 rounded-lg">
+                          <div class="card-text m-5">
+                              <h5>Test Header</h5>
+                              <p class="mb-5">test Paragagh</p>
+                              <button class="btn">Read More</button>
+                          </div>
+                      </div>
+      
+                      <div class="card-content border-2 w-80">
+                          <img src="imgs/example-img.jpg" alt="image" class="w-80 h-54 rounded-lg">
+                          <div class="card-text m-5">
+                              <h5>Test Header</h5>
+                              <p class="mb-5">test Paragagh</p>
+                              <button class="btn">Read More</button>
+                          </div>
+                      </div>
+      
+                      <div class="card-content border-2 w-80">
+                          <img src="imgs/example-img.jpg" alt="image" class="w-80 h-54 rounded-lg">
+                          <div class="card-text m-5">
+                              <h5>Test Header</h5>
+                              <p class="mb-5">test Paragagh</p>
+                              <button class="btn">Read More</button>
+                          </div>
+                      </div>
+      
+                      <div class="card-content border-2 w-80">
+                          <img src="imgs/example-img.jpg" alt="image" class="w-80 h-54 rounded-lg">
+                          <div class="card-text m-5">
+                              <h5>Test Header</h5>
+                              <p class="mb-5">test Paragagh</p>
+                              <button class="btn">Read More</button>
+                          </div>
+                      </div>
+      
+                      
+                  </div>
+          
+                    </div>
+                   
+                  
+             
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  
+                  
+                  </div>
+      
+                     
+                  </div>
+        
+            </div>  -->
+    </section>
     </main>
     <!-- footer -->
 
-    <footer>
-        <img src="#" alt="logo">
+    <!-- <footer class="w-screen h-20 bg-blue flex-col ">
+        <img src="imgs/b-giglelogo.png" alt="logo" class="w-10 h-10">
+        <p class="">gigly</p>
         <div class="social-media"></div>
 
-        <div class="footer-links">
-            <ul>
-                <li><a href="#">My Events</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
+    </footer> -->
 
-    </footer>
+    <script src="script.js" async></script>
+    <!-- slick & jquery -->
+    
+        <!-- jquery -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- jquery ui -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-    <script src="js/script.js" async></script>
-    <!-- tailwind css -->
+    <!-- jquery migrate-->
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
           theme: {
             extend: {
               colors: {
-                clifford: '#da373d',
+                green: '#162802',
+                neongreen: '#DAFEA4',
+                blue:'#A0C7FE',
+                light:'#ede9fe'
               }
             }
           }
