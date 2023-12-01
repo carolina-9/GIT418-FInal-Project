@@ -1,4 +1,5 @@
 "use strict";
+
 // swiper library initializer
 
 const swiper = new Swiper('.swiper', {
@@ -60,13 +61,14 @@ const swiper = new Swiper('.swiper', {
         // request = user input / term = matchers user input to info available
         url: `https://api.seatgeek.com/2/events?q=${encodeURIComponent(request.term)}&client_id=${clientId}&client_secret=${apiSecret}`,
         dataType: "json",
-        // get values from api (map)
+        // get values from api/formats info (map)
         success: function(data) {
           response($.map(data.events, function(item){
             return {
+              // how the info is displayed in dropdown menu
             label:item.title,
             value:item.id,
-            }
+            } 
           }));
         }
 
@@ -77,9 +79,12 @@ const swiper = new Swiper('.swiper', {
     },
     minLength: 2,
     select: function( event, ui ) {
-      console.log( "Selected: " + ui.item.value + " is " + ui.item.id);
+      console.log( "Selected: " + ui.item.value);
 
-      // api info for cards
+     
+
+
+      // api info for cards added to list
 
       $.ajax({
         url:`https://api.seatgeek.com/2/events/${ui.item.value}?client_id=${clientId}&client_secret=${apiSecret}`,
@@ -99,19 +104,57 @@ const swiper = new Swiper('.swiper', {
   //  function to add card from search bar to your list
   function cardList(event) {
     var card = `
-        <div class="swiper-slide flex space-x-4">
+        
             <div class="card-content border-2 w-80">
                 <img src="${event.performers[0].image}" alt="${event.title}" class="w-80 h-54 rounded-lg">
                 <div class="card-text m-5">
                     <h5>${event.title}</h5>
                     <p>${event.venue.name}</p>
                 </div>
-            </div>
-        </div>`;
+            </div>`;
 
  
-    $('.swiper-wrapper').append(card);
+    $('.append').append(card);
+
+
+
+
+    // web storage  ~ not working 
+
+    // - save search id for local storage
+    // append id when the page is reloaded
+
+    // $.ajax({
+    //   url:`https://api.seatgeek.com/2/events/${ui.item.value}?client_id=${clientId}&client_secret=${apiSecret}`,
+    //   dataType: "json",
+    //   success: function(event) {
+    //     let savedSearch = localStorage.getItem(ui.item.value)
+
+    //    console.log(`${ui.item.value} saved`)
+
+       
+    //   }
+    // });
+
 
 
   }
 
+ 
+
+
+
+  // web storage zybooks example
+
+//   let playerNameWidget = document.getElementById("playerName");
+// let difficultyLevelWidget = document.getElementById("diffLevel");
+        
+// if (localStorage.getItem("playerName")) {                
+//    playerNameWidget.value = localStorage.getItem("playerName");
+//    difficultyLevelWidget.value = localStorage.getItem("difficultyLevel");
+// }
+        
+// document.getElementById("saveBtn").addEventListener("click", function() {
+//    localStorage.setItem("playerName", playerNameWidget.value);
+//    localStorage.setItem("difficultyLevel", difficultyLevelWidget.value);
+// });
